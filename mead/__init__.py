@@ -15,26 +15,47 @@
 
 import os
 
-from flask import Flask
+
+from flask import Flask, g
 from werkzeug import cached_property
 from jinja2 import ChoiceLoader, FileSystemLoader
 
-from mead.themes import default
+from flaskext.themes import setup_themes, load_themes_from, get_theme
+
+
 class MeadFlask(Flask):
 	""" Enhanced Flask class for smart mead template loading
 	"""
-	@cached_property
-	def jinja_loader(self):
-		return ChoiceLoader([
-			FileSystemLoader('mead/themes/'),
-			FileSystemLoader('mead/core/themes/'),
-			FileSystemLoader('core/admin/templates/'),
-			super(MeadFlask, self).jinja_loader,
-		])
+#	@cached_property
+#	def jinja_loader(self):
+#		return ChoiceLoader([
+##			FileSystemLoader('mead/themes/'),
+##			FileSystemLoader('mead/core/themes/'),
+#			FileSystemLoader('core/admin/templates/'),
+#			super(MeadFlask, self).jinja_loader
+#		])
+	pass
 
-app = MeadFlask(__name__)
 
 
+
+app = Flask(__name__)
+#app.instance_root = '/'.join(__file__.split('/')[:-1])
+app.instance_root = '/Users/kreitz/repos/public/mead/mead'
+#print app.instance_root
+
+#def theme_loader(app):
+#	themes_dir = os.path.join(app.instance_root, 'themes')
+#	if os.path.isdir(themes_dir):
+#		return load_themes_from(themes_dir)
+#	else:
+#		return ()
+
+@app.before_request
+def get_current_theme():
+		g.theme = get_theme(app.config['THEME'])
+
+setup_themes(app, theme_url_prefix='/themes')
 
 # =============
 # CONFIGURATION
@@ -67,7 +88,7 @@ if 1:
 app.config['SQLALCHEMY_DATABASE_URI'] = app.config['DATABASE']
 del app.config['DATABASE']
 
-app.register_module()
+
 
 # =====
 # VIEWS
