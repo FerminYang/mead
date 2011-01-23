@@ -14,7 +14,7 @@ from mead.core.models import (
 @app.route('/', methods=['GET'])
 def index():
 	"""Receives Application Metrics transmissions."""
-	return render_template('index.html')
+	return render_template('mead/core/default/index.html')
 
 
 #@app.route('/', methods=['GET'])
