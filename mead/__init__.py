@@ -26,24 +26,10 @@ class MeadFlask(Flask):
 	@cached_property
 	def jinja_loader(self):
 		return ChoiceLoader([
+			FileSystemLoader('mead/themes/'),
+			FileSystemLoader('core/admin/templates/'),
 			super(MeadFlask, self).jinja_loader,
-			FileSystemLoader('/Users/kreitz/repos/public/mead/mead/themes/default/'),
-#			FileSystemLoader('core/admin/templates/'),
-
 		])
-
-	def set_theme(self, theme_name):
-
-#		def load(loader):
-#			return loader
-#
-#		loader =  ChoiceLoader([
-#			FileSystemLoader('themes/%s/' % (theme_name)),
-#			FileSystemLoader('core/admin/templates/'),
-#			super(MeadFlask, self).jinja_loader,
-#		])
-		pass
-
 
 app = MeadFlask(__name__)
 
@@ -72,7 +58,7 @@ except RuntimeError:
 #if os.uname()[1] in app.config['DEBUG_HOSTS']:
 if 1:
 	app.config.debug = True
-
+	
 
 # Configure SQLAlchemy
 app.config['SQLALCHEMY_DATABASE_URI'] = app.config['DATABASE']
@@ -84,6 +70,7 @@ del app.config['DATABASE']
 # =====
 
 import mead.core.views.content
+print dict(app.config)
 import mead.core.admin.views
 
 if __name__ == '__main__':

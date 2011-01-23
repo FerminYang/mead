@@ -10,11 +10,14 @@ from mead.core.models import (
 	auth, content, meta
 )
 
+THEME = app.config['THEME']
 
 @app.route('/', methods=['GET'])
 def index():
 	"""Receives Application Metrics transmissions."""
-	return render_template('mead/core/default/index.html')
+	return render_template('%s/index.html' % THEME,
+
+	)
 
 
 #@app.route('/', methods=['GET'])
