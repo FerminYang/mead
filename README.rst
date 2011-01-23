@@ -6,20 +6,18 @@ Mead: Sweet Flask-based CMS for Content
     - Roles / Abilities
 * Custom Post Types (Posts/Pages Default)
 * Tags + Categories
-* RSS / Atom Feeds for Everything
+* RSS / Atom Feeds for Everything (Internal Plugin)
 * Comments (backtype? disqus?)
 * Plugin Structure
     - Hooks System     
     - support git backed posts
     - support markups
     - commment
-
 * Templates
     - job_234.html
     - post_342.html
     - category_423.html
-
-* ReST API or XML-RPC
+* ReST API or XML-RPC (Internal Plugin)
  
 
 Modules / Libraries
