@@ -27,7 +27,7 @@ def index():
 @app.route('/<pagetype>/<pageref>')
 def get_page(pagetype, pageref):
 	"""Receives Application Metrics transmissions."""
-	page = Page.query.filter_by(type=pagetype, id=pageref).first()
+	page = Page.query.filter_by(type=pagetype, id=pageref).first_or_404()
 
 	return render_theme_template(g.theme, 'page.html',
 	page=page,

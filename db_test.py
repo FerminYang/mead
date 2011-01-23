@@ -12,27 +12,25 @@ def add(x):
 
 
 
-app.test_request_context('/').push()
-
-pages = Page.query.all()
-print pages
-# 
+#app.test_request_context('/').push()
+#
+#pages = Page.query.all()
+#print pages
+##
 # for user in users:
 # 	print user.username
 
-
+db.create_all()
 	
 if __name__ == '__main__':
 #	# pass
-#	db.create_all()
-#
-#	page = Page()
-#	page.title = 'This is Mead'
-#	page.title = 'LOREM IPSUM OMG'
-#	page.type = 'page'
-#
-#	add(page)
-#
-#	add(page)
+
+
+	page = Page()
+	page.title = 'This is Mead'
+	page.content = 'LOREM IPSUM OMG'
+	page.type = 'page'
+
+	add(page)
 #	#
 	pass

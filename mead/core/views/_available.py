@@ -9,9 +9,15 @@ defaults = dict(
 	site_title = app.config['SITE_TITLE'],
 	site_root_url = '/',
 	static_url = app.config['THEME'],
-	pages = Page.query.all()
+#
 
 #	url_for('.themes/', filename='style.css')
 )
+
+
+try:
+	defaults.update(dict(pages = Page.query.all()))
+except OperationalError:
+	db.create_all()
 
 
