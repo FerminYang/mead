@@ -1,33 +1,16 @@
-Mead: Sweet Flask-based CMS for Content
-=======================================
+Clint: Python Command-line Application Helpers
+==============================================
 
-I may or may not get far with this. Let's see.
+[Image of Clint Eastwood]
 
-* WordPress influenced
-* Custom Post Types (Posts/Pages Default)
-* Tags + Categories
-* RSS / Atom Feeds for Everything
-* Comments (backtype? disqus?)
-* Plugin Structure
-    - Hooks System     
-    - support git backed posts
-    - support markups
-    - commment
+* Tree Structures
+* Columns / Colors
 
-* Templates
-    - job_234.html
-    - post_342.html
-    - category_423.html
+    powered by colorama
+    
+    colored.blue('Face')
+    colored.white('Book')
 
-* ReST API or XML-RPC
- 
-
-Modules / Libraries
-===================
-
-- SQLAlchemy
-- Nexus
-- Dulwich
-- Backtype
-- Disqus
-
+* choice: y/N?
+* query: Installation Path [/usr/local/bin/]: 
+* &c
