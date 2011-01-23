@@ -7,7 +7,7 @@ from flaskext.themes import render_theme_template, get_theme, get_themes_list
 from mead import app
 from mead.core.models.content import Page
 
-from _available import defaults
+from available import defaults
 
 from mead.core.models import (
 	auth, content, meta
