@@ -5,6 +5,7 @@ from flask import (
 from flaskext.themes import render_theme_template, get_theme, get_themes_list
 
 from mead import app
+from mead.core.models.content import Page
 
 from _available import defaults
 
@@ -22,3 +23,13 @@ def index():
 	**defaults
 	)
 
+
+@app.route('/<pagetype>/<pageref>')
+def get_page(pagetype, pageref):
+	"""Receives Application Metrics transmissions."""
+	page = Page.query.filter_by(type=pagetype, id=pageref).first()
+
+	return render_theme_template(g.theme, 'page.html',
+	page=page,
+	**defaults
+	)

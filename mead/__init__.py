@@ -26,31 +26,15 @@ from flaskext.themes import setup_themes
 class MeadFlask(Flask):
 	""" Enhanced Flask class for smart mead template loading
 	"""
-#	@cached_property
-#	def jinja_loader(self):
-#		return ChoiceLoader([
-##			FileSystemLoader('mead/themes/'),
-##			FileSystemLoader('mead/core/themes/'),
-#			FileSystemLoader('core/admin/templates/'),
-#			super(MeadFlask, self).jinja_loader
-#		])
-	pass
+	@cached_property
+	def jinja_loader(self):
+		return ChoiceLoader([
+			FileSystemLoader('core/admin/templates/'),
+			super(MeadFlask, self).jinja_loader
+		])
 
-
-
-
-app = Flask(__name__)
-#app.instance_root = '/'.join(__file__.split('/')[:-1])
-#app.instance_root = '/Users/kreitz/repos/public/mead/mead'
-#print app.instance_root
-
-#def theme_loader(app):
-#	themes_dir = os.path.join(app.instance_root, 'themes')
-#	if os.path.isdir(themes_dir):
-#		return load_themes_from(themes_dir)
-#	else:
-#		return ()
-
+	
+app = MeadFlask(__name__)
 setup_themes(app)
 
 # =============

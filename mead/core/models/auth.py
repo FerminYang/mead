@@ -1,4 +1,5 @@
 from flaskext.sqlalchemy import SQLAlchemy
+from werkzeug.security import check_password_hash, generate_password_hash
 from mead import app
 
 __version__ = '0.0.0'
@@ -6,20 +7,21 @@ __version__ = '0.0.0'
 db = SQLAlchemy(app)
 
 
-class Test(db.Model):
-	"""The :class:`Test` object is a test of the app structure.
-	"""
-	__tablename__ = 'tests'
+class User(db.Model):
+    __tablename__ = 'users'
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(80), unique=True)
+    pw_hash = db.Column(db.String(80))
 
-	id = db.Column(db.Integer, primary_key=True)
-	value = db.Column(db.Text)
+    def __init__(self, username, password):
+        self.username = username
+        self.set_password(password)
 
-	def __init__(self, value):
-		self.value = value
+    def set_password(self, password):
+        self.pw_hash = generate_password_hash(password)
 
-	def __repr__(self):
-		return '<Test #%r>' % self.id
+    def check_password(self, password):
+        return check_password_hash(self.pw_hash, password)
 
-
-# meta class page
-# meta class post
+    def __repr__(self):
+        return '<User %r>' % self.username
