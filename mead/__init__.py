@@ -70,7 +70,6 @@ del app.config['DATABASE']
 # =====
 
 import mead.core.views.content
-print dict(app.config)
 import mead.core.admin.views
 
 if __name__ == '__main__':
