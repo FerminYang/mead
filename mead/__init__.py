@@ -19,6 +19,7 @@ from flask import Flask
 from werkzeug import cached_property
 from jinja2 import ChoiceLoader, FileSystemLoader
 
+from mead.themes import default
 class MeadFlask(Flask):
 	""" Enhanced Flask class for smart mead template loading
 	"""
@@ -32,6 +33,8 @@ class MeadFlask(Flask):
 		])
 
 app = MeadFlask(__name__)
+
+
 
 # =============
 # CONFIGURATION
