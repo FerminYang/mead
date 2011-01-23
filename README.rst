@@ -1,6 +1,8 @@
 Mead: Sweet Flask-based CMS for Content
 =======================================
 
+I may or may not get far with this. Let's see.
+
 * WordPress influenced
 * Custom Post Types (Posts/Pages Default)
 * Tags + Categories
