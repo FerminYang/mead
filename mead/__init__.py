@@ -19,7 +19,6 @@ from flask import Flask
 from werkzeug import cached_property
 from jinja2 import ChoiceLoader, FileSystemLoader
 
-
 class MeadFlask(Flask):
 	""" Enhanced Flask class for smart mead template loading
 	"""
