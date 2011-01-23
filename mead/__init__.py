@@ -27,6 +27,7 @@ class MeadFlask(Flask):
 	def jinja_loader(self):
 		return ChoiceLoader([
 			FileSystemLoader('mead/themes/'),
+			FileSystemLoader('mead/core/themes/'),
 			FileSystemLoader('core/admin/templates/'),
 			super(MeadFlask, self).jinja_loader,
 		])

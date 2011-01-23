@@ -6,9 +6,13 @@ from flask import (
 
 from mead import app
 
+from _available import defaults
+
 from mead.core.models import (
 	auth, content, meta
 )
+
+
 
 THEME = app.config['THEME']
 
@@ -16,13 +20,6 @@ THEME = app.config['THEME']
 def index():
 	"""Receives Application Metrics transmissions."""
 	return render_template('%s/index.html' % THEME,
-
+	**defaults
 	)
-
-
-#@app.route('/', methods=['GET'])
-#def hello_world():
-#	"""Lists all All Content (for now)"""
-#	tests = Content.query.all()
-
 
