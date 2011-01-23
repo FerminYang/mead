@@ -44,7 +44,10 @@ app.config['SQLALCHEMY_DATABASE_URI'] = app.config['DATABASE']
 del app.config['DATABASE']
 
 
-# Views
+# =====
+# VIEWS
+# =====
+
 import mead.core.views.content
 import mead.core.admin.views
 
