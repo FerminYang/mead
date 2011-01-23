@@ -12,7 +12,7 @@ Mead: Sweet Flask-based CMS for Content
     - Hooks System     
     - support git backed posts
     - support markups
-    - commment
+    - comment
 * Templates
     - job_234.html
     - post_342.html
