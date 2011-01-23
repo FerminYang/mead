@@ -29,3 +29,16 @@ Modules / Libraries
 - Backtype
 - Disqus
 
+
+
+Frontend / Admin
+================
+
+ExtJS?
+MarkItUp
+
+
+
+Things to Consider
+==================
+Mobile.
