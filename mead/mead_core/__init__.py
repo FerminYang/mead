@@ -13,11 +13,11 @@
 
 """
 
+
 from flask import Flask
 
 
 app = Flask(__name__)
-
 
 # CONFIGURATION
 app.config.from_object('metrics.core.defaults')
@@ -26,6 +26,10 @@ try:
 	app.config.from_envvar('MEAD_SETTINGS')
 except RuntimeError:
 	pass
+
+# Configure SQLAlchemy
+app.config['SQLALCHEMY_DATABASE_URI'] = app.config['DATABASE']
+del app.config['DATABASE']
 
 if __name__ == '__main__':
 	app.run()
