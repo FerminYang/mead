@@ -12,7 +12,8 @@ class Page(db.Model):
 	__tablename__ = 'pages'
 
 	id = db.Column(db.Integer, primary_key=True)
-	title = db.Column(db.Text)
+	title = db.Column(db.Text, unique=True)
+	slug = db.Column(db.Text, unique=True)
 	content = db.Column(db.Text)
 	type = db.Column(db.Text)
 
@@ -27,7 +28,8 @@ class Post(db.Model):
 	__tablename__ = 'posts'
 
 	id = db.Column(db.Integer, primary_key=True)
-	title = db.Column(db.Text)
+	slug = db.Column(db.Text, unique=True)
+	title = db.Column(db.Text, unique=True)
 	content = db.Column(db.Text)
 	type = db.Column(db.Text)
 
