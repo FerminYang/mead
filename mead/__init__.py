@@ -18,11 +18,23 @@ from flask import Flask
 
 app = Flask(__name__)
 
+# =============
 # CONFIGURATION
+# =============
+
+# Load Mead defaults.
 app.config.from_object('mead.core.defaults')
+
+
 try:
-	# load from local environment.
-	app.config.from_envvar('MEAD_SETTINGS')
+	app.config.from_envvar('MEAD_SETTINGS') # Change if you have multiple instances.
+except RuntimeError:
+	pass
+
+
+try:
+	# Load from local environment.
+	app.config.from_pyfile('local_config.py')
 except RuntimeError:
 	pass
 
