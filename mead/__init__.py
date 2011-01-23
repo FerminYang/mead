@@ -64,6 +64,7 @@ if 1:
 app.config['SQLALCHEMY_DATABASE_URI'] = app.config['DATABASE']
 del app.config['DATABASE']
 
+app.register_module()
 
 # =====
 # VIEWS
