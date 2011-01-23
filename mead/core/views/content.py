@@ -13,7 +13,6 @@ from mead.core.models import (
 )
 
 
-
 THEME = app.config['THEME']
 
 @app.route('/')

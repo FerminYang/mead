@@ -20,7 +20,7 @@ from flask import Flask, g
 from werkzeug import cached_property
 from jinja2 import ChoiceLoader, FileSystemLoader
 
-from flaskext.themes import setup_themes, load_themes_from, get_theme
+from flaskext.themes import setup_themes
 
 
 class MeadFlask(Flask):
@@ -41,7 +41,7 @@ class MeadFlask(Flask):
 
 app = Flask(__name__)
 #app.instance_root = '/'.join(__file__.split('/')[:-1])
-app.instance_root = '/Users/kreitz/repos/public/mead/mead'
+#app.instance_root = '/Users/kreitz/repos/public/mead/mead'
 #print app.instance_root
 
 #def theme_loader(app):
@@ -51,11 +51,7 @@ app.instance_root = '/Users/kreitz/repos/public/mead/mead'
 #	else:
 #		return ()
 
-@app.before_request
-def get_current_theme():
-		g.theme = get_theme(app.config['THEME'])
-
-setup_themes(app, theme_url_prefix='/themes')
+setup_themes(app)
 
 # =============
 # CONFIGURATION
@@ -96,6 +92,8 @@ del app.config['DATABASE']
 
 import mead.core.views.content
 import mead.core.admin.views
+
+import mead.core.helpers
 
 if __name__ == '__main__':
 	app.run()
