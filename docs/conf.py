@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Tablib documentation build configuration file, created by
+# mead documentation build configuration file, created by
 # sphinx-quickstart on Tue Oct  5 15:25:21 2010.
 #
 # This file is execfile()d with the current directory set to its containing dir.
@@ -12,12 +12,12 @@
 # serve to show the default.
 
 import sys, os
-import tablib
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 sys.path.insert(0, os.path.abspath('..'))
+import mead
 
 # -- General configuration -----------------------------------------------------
 
@@ -49,7 +49,7 @@ copyright = u'2011, Kenneth Reitz. Styles (modified) &copy; Armin Ronacher'
 # built documents.
 #
 # The short X.Y version.
-version = tablib.core.__version__
+version = mead.core.__version__
 # The full version, including alpha/beta/rc tags.
 release = version
 
