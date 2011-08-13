@@ -1,3 +1,3 @@
 # -*- coding: utf-8 -*-
 
-from . import plugins, models, views
+__version__ = '0.0.0'
