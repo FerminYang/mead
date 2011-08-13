@@ -24,16 +24,16 @@ from flaskext.themes import setup_themes
 
 
 class MeadFlask(Flask):
-	""" Enhanced Flask class for smart mead template loading
-	"""
-	@cached_property
-	def jinja_loader(self):
-		return ChoiceLoader([
-			FileSystemLoader('core/admin/templates/'),
-			super(MeadFlask, self).jinja_loader
-		])
+    """ Enhanced Flask class for smart mead template loading
+    """
+    @cached_property
+    def jinja_loader(self):
+        return ChoiceLoader([
+                FileSystemLoader('core/admin/templates/'),
+                super(MeadFlask, self).jinja_loader
+        ])
 
-	
+
 app = MeadFlask(__name__)
 setup_themes(app)
 
@@ -46,23 +46,23 @@ app.config.from_object('mead.core.defaults')
 
 
 try:
-	app.config.from_envvar('MEAD_SETTINGS') # Change if you have multiple instances.
+    app.config.from_envvar('MEAD_SETTINGS') # Change if you have multiple instances.
 except RuntimeError:
-	pass
+    pass
 
 
 try:
-	# Load from local environment.
-	app.config.from_pyfile('local_config.py')
+    # Load from local environment.
+    app.config.from_pyfile('local_config.py')
 except RuntimeError:
-	pass
+    pass
 
 
 # Debug?
 #if os.uname()[1] in app.config['DEBUG_HOSTS']:
 if 1:
-	app.config.debug = True
-	
+    app.config.debug = True
+
 
 # Configure SQLAlchemy
 app.config['SQLALCHEMY_DATABASE_URI'] = app.config['DATABASE']
@@ -80,4 +80,4 @@ import mead.core.admin.views
 import mead.core.helpers
 
 if __name__ == '__main__':
-	app.run()
+    app.run()

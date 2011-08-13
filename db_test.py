@@ -4,11 +4,11 @@
 
 from mead import app
 from mead.core.models.content import Page, db
-# 
+#
 def add(x):
 
-	db.session.add(x)
-	db.session.commit()
+    db.session.add(x)
+    db.session.commit()
 
 
 
@@ -18,19 +18,19 @@ def add(x):
 #print pages
 ##
 # for user in users:
-# 	print user.username
+#       print user.username
 
 db.create_all()
-	
+
 if __name__ == '__main__':
-#	# pass
+#       # pass
 
 
-	page = Page()
-	page.title = 'This is Mead'
-	page.content = 'LOREM IPSUM OMG'
-	page.type = 'page'
+    page = Page()
+    page.title = 'This is Mead'
+    page.content = 'LOREM IPSUM OMG'
+    page.type = 'page'
 
-	add(page)
-#	#
-	pass
+    add(page)
+#       #
+    pass

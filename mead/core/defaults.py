@@ -11,13 +11,13 @@ THEME = 'default'
 SITE_TITLE = 'Mead Website'
 
 CONTENT_TYPES = [
-	dict(
-		name = 'post',
-		type = 'post',
-	),
-	
-	dict(
-		name = 'page',
-		type = 'page',
-	)
+        dict(
+                name = 'post',
+                type = 'post',
+        ),
+
+        dict(
+                name = 'page',
+                type = 'page',
+        )
 ]
