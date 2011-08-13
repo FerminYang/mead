@@ -2,31 +2,33 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Tablib: Pythonic Tabular Data 
-=============================
+Mead: A Sweet, WordPress-influenced CMS for Flask
+=================================================
 
 .. Contents:
-.. 
+..
 .. .. toctree::
 ..    :maxdepth: 2
-.. 
+..
 
 .. Indices and tables
 .. ==================
-.. 
+..
 .. * :ref:`genindex`
 .. * :ref:`modindex`
 .. * :ref:`search`
 
 
-Mead is an :ref:`MIT Lisenced <mit>` WordPress-influenced CMS for Flask. It's awesome.
+Mead is a sweet, :ref:`ISC Licensed <isc>`, WordPress-influenced CMS
+for Flask. It's awesome.
 
 I recommend you start with :ref:`Installation <install>`.
 
 User's Guide
 ------------
 
-This part of the documentation, which is mostly prose, begins with some background information about Tablib, then focuses on step-by-step instructions for getting the most out of your datasets.
+This part of the documentation, which is mostly prose, begins with some
+background information about Mead.
 
 .. toctree::
    :maxdepth: 2
