@@ -9,7 +9,6 @@
     :license: ISC
     :developer: Kenneth Reitz
 """
-import os
 from flask import Flask
 from flaskext.themes import setup_themes
 from werkzeug import cached_property
