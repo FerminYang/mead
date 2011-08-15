@@ -7,8 +7,7 @@
 
     :copyright: (c) 2011 Kenneth Reitz
     :license: ISC
-    :developer: Kenneth Reit
-
+    :developer: Kenneth Reitz
 """
 
 import os
