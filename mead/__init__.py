@@ -58,5 +58,15 @@ if 'DATABASE' in app.config:
     del app.config['DATABASE']
 
 
+# =====
+# VIEWS
+# =====
+# I know these imports look unused, but apparently importing them makes the app
+# work.
+import mead.core.views.content
+import mead.core.admin.views
+import mead.core.helpers
+
+
 if __name__ == '__main__':
     app.run()
