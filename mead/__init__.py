@@ -54,8 +54,9 @@ if 1:
     app.config.debug = True
 
 # Configure SQLAlchemy
-app.config['SQLALCHEMY_DATABASE_URI'] = app.config['DATABASE']
-del app.config['DATABASE']
+app.config['SQLALCHEMY_DATABASE_URI'] = app.config.get('DATABASE', None)
+if 'DATABASE' in app.config:
+    del app.config['DATABASE']
 
 
 if __name__ == '__main__':
