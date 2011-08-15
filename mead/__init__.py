@@ -2,10 +2,8 @@
 # -*- coding: utf-8 -*-
 
 """
-    mead.core
-    ~~~~~~~~~~~~
-
-    Mead's core. The Honey.
+    mead
+    ~~~~
 
     :copyright: (c) 2011 Kenneth Reitz
     :license: ISC
